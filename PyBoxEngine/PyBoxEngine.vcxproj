@@ -87,7 +87,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>C:\Users\New\AppData\Local\Programs\Python\Python35-32\include;Dependencies</AdditionalIncludeDirectories>
     </ClCompile>
@@ -154,15 +154,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gl_render.cpp" />
+    <ClCompile Include="mesh.cpp" />
     <ClCompile Include="PyBoxEngine.cpp" />
     <ClCompile Include="py_embed.cpp" />
+    <ClCompile Include="shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py" />
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gl_render.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="py_embed.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

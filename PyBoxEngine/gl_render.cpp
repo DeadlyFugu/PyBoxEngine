@@ -1,4 +1,5 @@
 #include "gl_render.h"
+#include "glew\glew.h"
 #include "glfw\glfw3.h"
 #include <cstdio>
 
@@ -20,6 +21,13 @@ GLRender::GLRender() {
 	}
 	
 	glfwMakeContextCurrent(window);
+
+	glewExperimental = GL_TRUE;
+	if (glewInit() != GLEW_OK) {
+		std::printf("ERROR: could not init GLEW");
+	}
+
+	glViewport(0, 0, width, height);
 }
 
 GLRender::~GLRender() {
