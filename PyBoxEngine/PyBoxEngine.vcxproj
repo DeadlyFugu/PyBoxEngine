@@ -153,9 +153,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PyBoxEngine.cpp" />
+    <ClCompile Include="py_embed.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="py_embed.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
