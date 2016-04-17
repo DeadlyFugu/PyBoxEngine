@@ -1,0 +1,4 @@
+embedding python:
+http://www.codeproject.com/Articles/820116/Embedding-Python-program-in-a-C-Cplusplus-code
+https://docs.python.org/3.5/extending/extending.html
+https://docs.python.org/3.5/extending/embedding.html
