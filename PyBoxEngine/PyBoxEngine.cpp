@@ -27,13 +27,15 @@ int main()
 		pentagon.AddAttribute(0, 0, 0);
 		Shader shader("shader.vs", "shader.fs");
 		Picture picture("grass.png");
+		Picture face("face.png");
 
 		while (!g.IsCloseRequested()) {
 			g.ClearScreen(1.0f, 0.0f, 0.5f);
 
 			shader.Bind();
 			pentagon.Draw();
-			picture.Draw(0, 0);
+			picture.Draw(100, 100);
+			face.Draw(120, 150);
 
 			g.PostUpdate();
 		}

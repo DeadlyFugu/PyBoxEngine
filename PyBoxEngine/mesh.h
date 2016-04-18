@@ -1,4 +1,5 @@
 #pragma once
+#include "gl_render.h"
 
 class Mesh {
 public:

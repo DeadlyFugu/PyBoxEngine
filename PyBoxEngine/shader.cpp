@@ -105,3 +105,7 @@ void Shader::SetTexture(char* uniform, Texture* tex, int slot) {
 	tex->Bind();
 	glUniform1i(GetLocation(uniform), slot);
 }
+
+void Shader::SetMat3(char * uniform, float* mat) {
+	glUniformMatrix3fv(GetLocation(uniform), 1, GL_FALSE, mat);
+}

@@ -1,5 +1,7 @@
 #pragma once
 
+extern float* view_matrix;
+
 class GLRender {
 public:
 	GLRender();
@@ -12,4 +14,6 @@ public:
 	int GetHeight();
 
 	bool IsCloseRequested();
+
+	void LoadViewMatrix();
 };

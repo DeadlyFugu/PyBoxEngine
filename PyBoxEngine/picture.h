@@ -2,6 +2,7 @@
 #include "texture.h"
 #include "shader.h"
 #include "mesh.h"
+#include "gl_render.h"
 
 class Picture {
 public:

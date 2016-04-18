@@ -8,7 +8,7 @@ public:
 	void Bind();
 	int GetWidth() { return width; }
 	int GetHeight() { return height; }
-public:
+private:
 	int width, height;
 	unsigned int tex;
 };

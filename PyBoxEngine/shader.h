@@ -11,6 +11,7 @@ public:
 	void SetFloat(char* uniform, float v);
 	void SetVec2(char* uniform, float x, float y);
 	void SetTexture(char* uniform, Texture* tex, int slot);
+	void SetMat3(char* uniform, float* mat);
 private:
 	unsigned int program;
 };
