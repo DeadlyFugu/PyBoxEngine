@@ -5,6 +5,7 @@
 
 GLFWwindow* window;
 int width, height;
+float* view_matrix;
 
 GLRender::GLRender() {
 	glfwInit();
@@ -28,6 +29,11 @@ GLRender::GLRender() {
 	}
 
 	glViewport(0, 0, width, height);
+	glEnable(GL_BLEND);
+	glBlendEquationSeparate(GL_FUNC_ADD, GL_FUNC_ADD);
+	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
+
+	LoadViewMatrix();
 }
 
 GLRender::~GLRender() {
@@ -54,4 +60,13 @@ int GLRender::GetHeight() {
 
 bool GLRender::IsCloseRequested() {
 	return glfwWindowShouldClose(window) ? true : false;
+}
+
+void GLRender::LoadViewMatrix() {
+	static float _view_matrix[] = {
+		2.f / width, 0, -1,
+		0, 2.f / height, -1,
+		0, 0, 1,
+	};
+	view_matrix = _view_matrix;
 }
