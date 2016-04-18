@@ -5,6 +5,7 @@
 #include "gl_render.h"
 #include "mesh.h"
 #include "shader.h"
+#include "picture.h"
 #include <conio.h>
 #include <stdio.h>
 
@@ -25,12 +26,14 @@ int main()
 		Mesh pentagon(18, verts);
 		pentagon.AddAttribute(0, 0, 0);
 		Shader shader("shader.vs", "shader.fs");
+		Picture picture("grass.png");
 
 		while (!g.IsCloseRequested()) {
 			g.ClearScreen(1.0f, 0.0f, 0.5f);
 
 			shader.Bind();
 			pentagon.Draw();
+			picture.Draw(0, 0);
 
 			g.PostUpdate();
 		}

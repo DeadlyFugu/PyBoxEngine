@@ -34,6 +34,12 @@
     <ClCompile Include="shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="picture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py">
@@ -43,6 +49,12 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="shader.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="picture.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="picture.vs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -62,5 +74,16 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="grass.png">
+      <Filter>Source Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

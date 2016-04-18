@@ -87,3 +87,21 @@ Shader::~Shader() {
 void Shader::Bind() {
 	glUseProgram(this->program);
 }
+
+int Shader::GetLocation(char* uniform) {
+	return glGetUniformLocation(program, uniform);
+}
+
+void Shader::SetFloat(char* uniform, float v) {
+	glUniform1f(GetLocation(uniform), v);
+}
+
+void Shader::SetVec2(char* uniform, float x, float y) {
+	glUniform2f(GetLocation(uniform), x, y);
+}
+
+void Shader::SetTexture(char* uniform, Texture* tex, int slot) {
+	glActiveTexture(GL_TEXTURE0 + slot);
+	tex->Bind();
+	glUniform1i(GetLocation(uniform), slot);
+}

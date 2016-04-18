@@ -1,4 +1,5 @@
 #pragma once
+#include "texture.h"
 
 class Shader {
 public:
@@ -6,6 +7,10 @@ public:
 	~Shader();
 
 	void Bind();
+	int GetLocation(char* uniform);
+	void SetFloat(char* uniform, float v);
+	void SetVec2(char* uniform, float x, float y);
+	void SetTexture(char* uniform, Texture* tex, int slot);
 private:
 	unsigned int program;
 };
