@@ -6,8 +6,11 @@
 #include "mesh.h"
 #include "shader.h"
 #include "picture.h"
+#include "input.h"
 #include <conio.h>
 #include <stdio.h>
+#include <math.h>
+#include <chrono>
 
 #include <glew/glew.h>
 
@@ -28,16 +31,33 @@ int main()
 		Shader shader("shader.vs", "shader.fs");
 		Picture picture("grass.png");
 		Picture face("face.png");
+		float x = 120, y = 150;
+		float n = 0;
+		using namespace std::chrono;
+		steady_clock::time_point prev = steady_clock::now();
+		float dt = 1 / 60.f;
 
 		while (!g.IsCloseRequested()) {
 			g.ClearScreen(1.0f, 0.0f, 0.5f);
+			input.PollDevice();
+			printf("axes: (%f, %f)\n", input.LeftAxisX(), input.LeftAxisY());
+			x += input.LeftAxisX() * 100 * dt;
+			y += input.LeftAxisY() *100 * dt;
+			//y = 200 + sinf(n * 6.2f / 2) * 120;
+			//x = 200 + cosf(n * 6.2f / 2) * 120;
+			n+=dt;
 
 			shader.Bind();
 			pentagon.Draw();
 			picture.Draw(100, 100);
-			face.Draw(120, 150);
+			face.Draw(x, y);
 
 			g.PostUpdate();
+
+			steady_clock::time_point current = steady_clock::now();
+			dt = duration_cast<duration<double>>(current - prev).count();
+			prev = current;
+			printf("dt = %f\n", dt);
 		}
 	}
 

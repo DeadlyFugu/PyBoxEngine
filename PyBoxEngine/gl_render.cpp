@@ -22,6 +22,7 @@ GLRender::GLRender() {
 	}
 	
 	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1);
 
 	glewExperimental = GL_TRUE;
 	if (glewInit() != GLEW_OK) {
