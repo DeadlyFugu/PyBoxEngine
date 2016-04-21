@@ -14,14 +14,17 @@
 
 #include <glew/glew.h>
 
+GLRender* glrender;
+
 int main()
 {
 	PythonEval py;
-	py.RunFile("embedded.py");
+	glrender = new GLRender();
+	py.RunFile("game.py");
+	delete glrender;
 
 	{
-		GLRender g;
-		float verts[] = {
+		/*float verts[] = {
 			0.0, 1.0, 0.95, 0.31, 0.59, -0.81,
 			0.0, 1.0, 0.59, -0.81, -0.59, -0.81,
 			0.0, 1.0, -0.59, -0.81, -0.95, 0.31,
@@ -35,10 +38,10 @@ int main()
 		float n = 0;
 		using namespace std::chrono;
 		steady_clock::time_point prev = steady_clock::now();
-		float dt = 1 / 60.f;
+		float dt = 1 / 60.f;*/
 
-		while (!g.IsCloseRequested()) {
-			g.ClearScreen(1.0f, 0.0f, 0.5f);
+		/*while (!glrender->IsCloseRequested()) {
+			glrender->ClearScreen(1.0f, 0.0f, 0.5f);
 			input.PollDevice();
 			printf("axes: (%f, %f)\n", input.LeftAxisX(), input.LeftAxisY());
 			x += input.LeftAxisX() * 100 * dt;
@@ -52,13 +55,13 @@ int main()
 			picture.Draw(100, 100);
 			face.Draw(x, y);
 
-			g.PostUpdate();
+			glrender->PostUpdate();
 
 			steady_clock::time_point current = steady_clock::now();
 			dt = duration_cast<duration<double>>(current - prev).count();
 			prev = current;
 			printf("dt = %f\n", dt);
-		}
+		}*/
 	}
 
 	printf("Press any key to exit...\n");

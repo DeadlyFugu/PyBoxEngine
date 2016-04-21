@@ -158,12 +158,16 @@
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="picture.cpp" />
     <ClCompile Include="PyBoxEngine.cpp" />
+    <ClCompile Include="py_display_module.cpp" />
     <ClCompile Include="py_embed.cpp" />
+    <ClCompile Include="py_graphics_module.cpp" />
+    <ClCompile Include="py_input_module.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py" />
+    <None Include="game.py" />
     <None Include="picture.fs" />
     <None Include="picture.vs" />
     <None Include="shader.fs" />
@@ -174,7 +178,10 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="picture.h" />
+    <ClInclude Include="py_display_module.h" />
     <ClInclude Include="py_embed.h" />
+    <ClInclude Include="py_graphics_module.h" />
+    <ClInclude Include="py_input_module.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="texture.h" />

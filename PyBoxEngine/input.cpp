@@ -1,6 +1,7 @@
 #include "input.h"
 #include <Windows.h>
 #include <Xinput.h>
+#include <cstdio>
 
 XINPUT_STATE controller_state;
 bool controller_connected;
@@ -44,6 +45,21 @@ float Input::RightTrigger() {
 	return (float) controller_state.Gamepad.bRightTrigger / 255;
 }
 
+static short button_flag(int id) {
+	switch (id) {
+	case 1:
+		return XINPUT_GAMEPAD_A;
+	case 2:
+		return XINPUT_GAMEPAD_B;
+	case 3:
+		return XINPUT_GAMEPAD_X;
+	case 4:
+		return XINPUT_GAMEPAD_Y;
+	default:
+		return 0;
+	}
+}
+
 bool Input::ButtonDown(int id) {
-	return (controller_state.Gamepad.wButtons & (XINPUT_GAMEPAD_A >> id)) != 0;
+	return (controller_state.Gamepad.wButtons & button_flag(id)) != 0;
 }

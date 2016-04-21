@@ -43,6 +43,15 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="py_graphics_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="py_display_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="py_input_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py">
@@ -58,6 +67,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="picture.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="game.py">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -84,6 +96,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="py_graphics_module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="py_display_module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="py_input_module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
