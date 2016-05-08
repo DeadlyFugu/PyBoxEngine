@@ -1,5 +1,9 @@
 #include "shader.h"
+#ifdef _WIN32
 #include <glew/glew.h>
+#else
+#include <GLES2/gl2.h>
+#endif
 #include <cstdio>
 #include <stdlib.h>
 

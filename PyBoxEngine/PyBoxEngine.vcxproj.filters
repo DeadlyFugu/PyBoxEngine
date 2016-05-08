@@ -52,6 +52,15 @@
     <ClCompile Include="py_input_module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="egl_render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quad_egl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="embedded.py">
@@ -106,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="py_input_module.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quad.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

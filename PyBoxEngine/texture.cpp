@@ -1,5 +1,9 @@
 #include "texture.h"
+#ifdef _WIN32
 #include <glew/glew.h>
+#else
+#include <GLES2/gl2.h>
+#endif
 #include <soil/SOIL.h>
 
 Texture::Texture(char * fname) {

@@ -1,5 +1,10 @@
 #include "mesh.h"
+#ifdef _WIN32
 #include <glew/glew.h>
+#else
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
+#endif
 
 Mesh::Mesh(int buffc, float* buffp) : vao(0), vbo(0) {
 	glGenBuffers(1, &vbo);

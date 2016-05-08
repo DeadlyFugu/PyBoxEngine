@@ -5,6 +5,7 @@
 #include "gl_render.h"
 #include "mesh.h"
 #include "shader.h"
+#include "quad.h"
 #include "picture.h"
 #include "input.h"
 #include <conio.h>
@@ -20,7 +21,9 @@ int main()
 {
 	PythonEval py;
 	glrender = new GLRender();
+	load_quad();
 	py.RunFile("game.py");
+	delete_quad();
 	delete glrender;
 
 	{

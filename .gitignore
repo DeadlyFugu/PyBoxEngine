@@ -8,6 +8,7 @@
 *.sln.docstates
 *.VC.opendb
 PyBoxEngine/Dependencies/*
+PyBoxEngine/PiInclude/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
